@@ -28,7 +28,11 @@
         <form:errors path="hour"/>
     </label>
 </div>
-
+<div>
+    <label>
+        Studenci <form:select  items="${students}" path="students" multiple="true"/>
+    </label>
+</div>
 
 
 

@@ -20,7 +20,7 @@
     </tr>
     <c:forEach items="${students}" var="student">
         <tr>
-            <td>${student.firstName}</td>
+            <td>${student.name}</td>
             <td>${student.surname}</td>
             <td>${student.phoneNumber}</td>
             <td>

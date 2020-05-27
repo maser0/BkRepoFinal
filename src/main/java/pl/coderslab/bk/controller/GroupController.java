@@ -5,7 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.bk.entity.Group;
+import pl.coderslab.bk.entity.Student;
 import pl.coderslab.bk.service.GroupService;
+import pl.coderslab.bk.service.StudentService;
+
+import java.util.List;
 
 @Controller
 //@Secured("Role_Admin")
@@ -13,9 +17,11 @@ import pl.coderslab.bk.service.GroupService;
 public class GroupController {
 
     private final GroupService groupService;
+    private final StudentService studentService;
 
-    public GroupController(GroupService groupService) {
+    public GroupController(GroupService groupService, StudentService studentService) {
         this.groupService = groupService;
+        this.studentService = studentService;
     }
 
     @GetMapping
@@ -60,4 +66,8 @@ public class GroupController {
         return "groupCreate";
     }
 
+    @ModelAttribute("students")
+    public List<Student> students(){
+        return studentService.findAll();
+    }
 }

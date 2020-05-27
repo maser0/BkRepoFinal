@@ -11,7 +11,6 @@ public class Group {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDateTime date;
     private String dayOfWeek;
     private String hour;
 
@@ -31,14 +30,6 @@ public class Group {
         this.id = id;
     }
 
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
-
     public String getDayOfWeek() {
         return dayOfWeek;
     }
@@ -55,7 +46,13 @@ public class Group {
         this.hour = hour;
     }
 
+    public List<Presence> getPresence() {
+        return presence;
+    }
 
+    public void setPresence(List<Presence> presence) {
+        this.presence = presence;
+    }
 
     public List<Student> getStudents() {
         return students;
@@ -63,13 +60,5 @@ public class Group {
 
     public void setStudents(List<Student> students) {
         this.students = students;
-    }
-
-    public List<Presence> getPresence() {
-        return presence;
-    }
-
-    public void setPresence(List<Presence> presence) {
-        this.presence = presence;
     }
 }
