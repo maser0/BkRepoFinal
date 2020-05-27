@@ -18,6 +18,8 @@ public class TrainerController {
         this.trainerService = trainerService;
     }
 
+
+
     @GetMapping
     public String get(Model model) {
         model.addAttribute("trainer", new Trainer());
@@ -41,7 +43,7 @@ public class TrainerController {
     @GetMapping("/delete/{id}")
     @ResponseBody
     public String delete(@PathVariable long id) {
-        Trainer trainerToDelete = new Trainer();
+        Trainer trainerToDelete = trainerService.read(id);
         trainerService.delete(trainerToDelete);
         return "Deleted";
     }

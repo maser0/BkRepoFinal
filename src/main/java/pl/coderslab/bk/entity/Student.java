@@ -13,8 +13,10 @@ public class Student {
     private String name;
     private String surname;
     private String phoneNumber;
+
     @ManyToMany ( mappedBy = "students")
     private List<Group> groups = new ArrayList<>();
+
     @OneToMany
     private List<Presence> presence = new ArrayList<>();
 

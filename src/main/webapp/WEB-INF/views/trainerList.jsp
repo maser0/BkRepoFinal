@@ -19,7 +19,7 @@
     </tr>
     <c:forEach items="${trainers}" var="trainer">
         <tr>
-            <td>${trainer.firstName}</td>
+            <td>${trainer.name}</td>
             <td>${trainer.surname}</td>
             <td>
                 <a href="/trainer/${trainer.id}">Edytuj</a>

@@ -10,8 +10,10 @@ public class Presence {
     private Long id;
     private LocalDateTime date;
     private boolean absence;
+
     @ManyToOne
     private Group group;
+
     @ManyToOne
     private Student student;
 

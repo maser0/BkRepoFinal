@@ -41,7 +41,7 @@ public class GroupController {
     @GetMapping("/delete/{id}")
     @ResponseBody
     public String delete(@PathVariable long id) {
-        Group groupToDelete = new Group();
+        Group groupToDelete = groupService.read(id);
         groupService.delete(groupToDelete);
         return "Deleted";
     }

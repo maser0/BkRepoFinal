@@ -43,7 +43,7 @@ public class StudentController {
     @GetMapping("/delete/{id}")
     @ResponseBody
     public String delete(@PathVariable long id) {
-        Student studentToDelete = new Student();
+        Student studentToDelete = studentService.read(id);
         studentService.delete(studentToDelete);
         return "Deleted";
     }

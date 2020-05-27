@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-
 public class Group {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -15,9 +14,12 @@ public class Group {
     private LocalDateTime date;
     private String dayOfWeek;
     private String hour;
-    @ManyToOne
-    private Presence presence;
+
+    @OneToMany
+    private List<Presence> presence = new ArrayList<>();
+
     @ManyToMany
+    @JoinTable(name = "group_students")
     private List<Student> students = new ArrayList<>();
 
 
@@ -53,13 +55,7 @@ public class Group {
         this.hour = hour;
     }
 
-    public Presence getPresence() {
-        return presence;
-    }
 
-    public void setPresence(Presence presence) {
-        this.presence = presence;
-    }
 
     public List<Student> getStudents() {
         return students;
@@ -67,5 +63,13 @@ public class Group {
 
     public void setStudents(List<Student> students) {
         this.students = students;
+    }
+
+    public List<Presence> getPresence() {
+        return presence;
+    }
+
+    public void setPresence(List<Presence> presence) {
+        this.presence = presence;
     }
 }

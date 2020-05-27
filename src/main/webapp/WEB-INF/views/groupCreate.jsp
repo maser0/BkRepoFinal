@@ -18,7 +18,7 @@
 
 <div>
     <label>
-        Data grupy <form:input path="dayOfWeek"/>
+        Dzień tygodnia <form:input path="dayOfWeek"/>
         <form:errors path="dayOfWeek"/>
     </label>
 </div>
