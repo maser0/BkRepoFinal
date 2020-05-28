@@ -1,6 +1,7 @@
 package pl.coderslab.bk.service;
 
 import org.springframework.stereotype.Service;
+import pl.coderslab.bk.entity.Group;
 import pl.coderslab.bk.entity.Student;
 import pl.coderslab.bk.repository.StudentRepository;
 
@@ -33,5 +34,7 @@ public class StudentService {
     public List<Student> findAll (){
          return studentRepository.findAll();
     }
+
+    public List<Student> findAllByGroupId(long id){ return studentRepository.findAllByGroupsId(id);}
     
 }

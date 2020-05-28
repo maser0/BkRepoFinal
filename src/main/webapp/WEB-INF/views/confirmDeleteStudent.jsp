@@ -12,7 +12,7 @@
 </head>
 <body>
 Jesteś pewien, że chesz usunąć: ${student.name} ${student.surname} ?
-<a href="/student/delete/${student.id}">Delete</a>
-<a href="/student/studentList">Cancel</a>
+<a href="/admin/student/delete/${student.id}">Delete</a>
+<a href="/admin/student/studentList">Cancel</a>
 </body>
 </html>

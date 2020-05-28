@@ -12,7 +12,7 @@
 </head>
 <body>
 Jesteś pewien, że chesz usunąć: ${trainer.name} ${trainer.surname} ?
-<a href="/trainer/delete/${trainer.id}">Delete</a>
-<a href="/trainer/trainerList">Cancel</a>
+<a href="/admin/trainer/delete/${trainer.id}">Delete</a>
+<a href="/admin/trainer/trainerList">Cancel</a>
 </body>
 </html>

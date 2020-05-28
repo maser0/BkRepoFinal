@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<form:form method="post" modelAttribute="student" action="/student">
+<form:form method="post" modelAttribute="student" action="/admin/student">
     <form:hidden path="id"/>
 <div>
     <label>

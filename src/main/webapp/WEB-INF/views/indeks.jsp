@@ -17,10 +17,10 @@
     </tr>
          <tr>
             <td>
-                <a href="/trainer">Stwórz trenera</a>
+                <a href="/admin/trainer">Stwórz trenera</a>
             </td>
             <td>
-                <a href="/trainer/list">Wszyscy trenerzy</a>
+                <a href="/admin/trainer/list">Wszyscy trenerzy</a>
             </td>
         </tr>
 
@@ -31,10 +31,10 @@
     </tr>
     <tr>
         <td>
-            <a href="/student">Stwórz studenta</a>
+            <a href="/admin/student">Stwórz studenta</a>
         </td>
         <td>
-            <a href="/student/list">Wszyscy studenci</a>
+            <a href="/admin/student/list">Wszyscy studenci</a>
         </td>
     </tr>
 
@@ -45,10 +45,10 @@
     </tr>
     <tr>
         <td>
-            <a href="/group">Stwórz grupe</a>
+            <a href="/admin/group">Stwórz grupe</a>
         </td>
         <td>
-            <a href="/group/list">Wszystkie grupy</a>
+            <a href="/admin/group/list">Wszystkie grupy</a>
         </td>
     </tr>
 

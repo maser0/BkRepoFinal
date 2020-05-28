@@ -24,10 +24,10 @@
             <td>${student.surname}</td>
             <td>${student.phoneNumber}</td>
             <td>
-                <a href="/student/${student.id}">Edytuj</a>
+                <a href="/admin/student/${student.id}">Edytuj</a>
             </td>
             <td>
-                <a href="/student/confirmDelete/${student.id}">Usuń</a>
+                <a href="/admin/student/confirmDelete/${student.id}">Usuń</a>
             </td>
         </tr>
     </c:forEach>

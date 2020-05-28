@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<form:form method="post" modelAttribute="group" action="/group">
+<form:form method="post" modelAttribute="group" action="/admin/group">
     <form:hidden path="id"/>
 
 <div>
