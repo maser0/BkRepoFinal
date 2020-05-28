@@ -32,5 +32,8 @@
         </tr>
     </c:forEach>
 </table>
+<div>
+    <a href="/">Strona główna</a>
+</div>
 </body>
 </html>

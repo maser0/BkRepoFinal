@@ -1,30 +1,30 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Witek
-  Date: 2020-05-26
-  Time: 11:42
+  Date: 2020-05-28
+  Time: 12:59
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Stwórz Trenera</title>
+    <title>Title</title>
 </head>
 <body>
 
-<form:form method="post" modelAttribute="trainer" action="/admin/trainer">
+<form:form method="post" modelAttribute="user" >
     <form:hidden path="id"/>
     <div>
         <label>
-            Imię <form:input path="name"/>
-            <form:errors path="name"/>
+            Nazwa użytkownika <form:input path="username"/>
+            <form:errors path="username"/>
         </label>
     </div>
     <div>
         <label>
-            Nazwisko <form:input path="surname"/>
-            <form:errors path="surname"/>
+            Hasło <form:input path="password"/>
+            <form:errors path="password"/>
         </label>
     </div>
 

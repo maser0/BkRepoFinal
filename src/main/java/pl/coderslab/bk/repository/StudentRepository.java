@@ -12,4 +12,5 @@ import java.util.List;
 public interface StudentRepository  extends JpaRepository<Student, Long> {
 
     List<Student> findAllByGroupsId(long groupId);
+    Student findOneByNameAndSurname(String name, String surname);
 }

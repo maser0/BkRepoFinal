@@ -34,4 +34,7 @@
     <input type="submit">
 </form:form>
 </body>
-<%--</html>--%>
+<div>
+    <a href="/">Strona główna</a>
+</div>
+</html>

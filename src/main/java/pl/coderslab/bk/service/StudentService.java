@@ -36,5 +36,8 @@ public class StudentService {
     }
 
     public List<Student> findAllByGroupId(long id){ return studentRepository.findAllByGroupsId(id);}
-    
+
+    public Student findOneByNameAndSurname (String name, String surname){
+        return studentRepository.findOneByNameAndSurname(name, surname);
+    }
 }

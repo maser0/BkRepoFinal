@@ -15,4 +15,7 @@ Jesteś pewien, że chesz usunąć: ${trainer.name} ${trainer.surname} ?
 <a href="/admin/trainer/delete/${trainer.id}">Delete</a>
 <a href="/admin/trainer/trainerList">Cancel</a>
 </body>
+<div>
+    <a href="/">Strona główna</a>
+</div>
 </html>

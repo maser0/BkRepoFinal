@@ -22,4 +22,7 @@
 </body>
 </html>
 </body>
+<div>
+    <a href="/">Strona główna</a>
+</div>
 </html>

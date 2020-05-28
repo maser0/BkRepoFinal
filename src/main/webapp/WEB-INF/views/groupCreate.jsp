@@ -30,7 +30,10 @@
 </div>
 <div>
     <label>
-        Studenci <form:select  items="${students}" path="students" multiple="true"/>
+        Studenci
+        <form:select  items="${students}" itemValue="id" itemLabel="fullName" path="students" multiple="true">
+
+    </form:select>
     </label>
 </div>
 
@@ -40,4 +43,8 @@
 
 <input type="submit">
 </form:form>
+<div>
+    <a href="/">Strona główna</a>
+</div>
+</body>
 </html>

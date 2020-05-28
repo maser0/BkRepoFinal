@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Witek
@@ -11,6 +12,7 @@
     <title>Strona główna</title>
 </head>
 <body>
+<h1><spring:message code="app.title"/></h1>
 <table>
     <tr>
         <th>Trener </th>
@@ -25,6 +27,7 @@
         </tr>
 
 </table>
+<br>
 <table>
     <tr>
         <th>Student </th>
@@ -37,8 +40,9 @@
             <a href="/admin/student/list">Wszyscy studenci</a>
         </td>
     </tr>
-
+<br>
 </table>
+<br>
 <table>
     <tr>
         <th>Grupa </th>
@@ -53,6 +57,29 @@
     </tr>
 
 </table>
+<br>
 
+<div>
+    <span>
+        <a href="/createUser">Stwórz użytkownika</a>
+    </span>
+</div>
+<br>
+
+
+<div>
+    <span>
+        <a href="/login">Zaloguj</a>
+    </span>
+</div>
+<br>
+<div>
+    <span>
+        <a href="/about">wyloguj</a>
+    </span>
+</div>
+<br>
+<footer><spring:message code="app.footer"/></footer>
 </body>
+
 </html>

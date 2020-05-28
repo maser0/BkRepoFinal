@@ -2,6 +2,7 @@ package pl.coderslab.bk.entity;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ public class Group {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String dayOfWeek;
+
     private String hour;
 
     @OneToMany

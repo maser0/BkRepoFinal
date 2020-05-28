@@ -11,8 +11,11 @@
     <title>Potwierdź usunięcie</title>
 </head>
 <body>
-Jesteś pewien, że chesz usunąć grupę: ${group.date} ?
+Jesteś pewien, że chesz usunąć grupę: ${group.dayOfWeek} ${group.hour} ?
 <a href="/admin/group/delete/${group.id}">Delete</a>
 <a href="/admin/group/groupList">Cancel</a>
 </body>
+<div>
+    <a href="/">Strona główna</a>
+</div>
 </html>

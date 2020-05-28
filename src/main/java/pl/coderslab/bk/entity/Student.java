@@ -23,6 +23,10 @@ public class Student {
     public Student() {
     }
 
+    public String getFullName(){
+        return name+" "+surname;
+    }
+
     public Long getId() {
         return id;
     }
@@ -69,5 +73,13 @@ public class Student {
 
     public void setPresence(List<Presence> presence) {
         this.presence = presence;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
     }
 }

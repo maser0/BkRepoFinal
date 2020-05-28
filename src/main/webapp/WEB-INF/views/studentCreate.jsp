@@ -38,4 +38,8 @@
 
 <input type="submit">
 </form:form>
+<div>
+    <a href="/">Strona główna</a>
+</div>
+</body>
 </html>
