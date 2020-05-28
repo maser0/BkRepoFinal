@@ -1,15 +1,14 @@
-package pl.coderslab.examplesecurity.fixture;
+package pl.coderslab.bk.fixture;
 
 
 import org.springframework.stereotype.Service;
-import pl.coderslab.examplesecurity.entity.Role;
-import pl.coderslab.examplesecurity.entity.User;
-import pl.coderslab.examplesecurity.interfaces.RoleService;
-import pl.coderslab.examplesecurity.interfaces.UserService;
-import pl.coderslab.examplesecurity.repository.RoleRepository;
-import pl.coderslab.examplesecurity.repository.UserRepository;
+import pl.coderslab.bk.entity.Role;
+import pl.coderslab.bk.entity.User;
+import pl.coderslab.bk.interfaces.RoleService;
+import pl.coderslab.bk.interfaces.UserService;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Service
 public class InitDataFixture {

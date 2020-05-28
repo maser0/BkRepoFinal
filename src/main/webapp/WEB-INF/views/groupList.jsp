@@ -21,10 +21,13 @@
             <td>${group.dayOfWeek}</td>
             <td>${group.hour}</td>
             <td>
-                <a href="/group/${group.id}">Edytuj</a>
+                <a href="/presence/${group.id}">Sprawdź obecność</a>
             </td>
             <td>
-                <a href="/group/confirmDelete/${group.id}">Usuń</a>
+                <a href="/admin/group/${group.id}">Edytuj</a>
+            </td>
+            <td>
+                <a href="/admin/group/confirmDelete/${group.id}">Usuń</a>
             </td>
         </tr>
     </c:forEach>

@@ -1,14 +1,13 @@
-package pl.coderslab.examplesecurity.service;
+package pl.coderslab.bk.service;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import pl.coderslab.examplesecurity.entity.Role;
-import pl.coderslab.examplesecurity.entity.User;
-import pl.coderslab.examplesecurity.interfaces.UserService;
-import pl.coderslab.examplesecurity.repository.RoleRepository;
-import pl.coderslab.examplesecurity.repository.UserRepository;
+import pl.coderslab.bk.entity.Role;
+import pl.coderslab.bk.entity.User;
+import pl.coderslab.bk.interfaces.UserService;
+import pl.coderslab.bk.repository.RoleRepository;
+import pl.coderslab.bk.repository.UserRepository;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 

@@ -9,7 +9,7 @@ import pl.coderslab.bk.service.TrainerService;
 
 @Controller
 //@Secured("Role_Admin")
-@RequestMapping("/trainer")
+@RequestMapping("/admin/trainer")
 public class TrainerController {
 
     private final TrainerService trainerService;
@@ -29,7 +29,7 @@ public class TrainerController {
     @PostMapping
     public String post (@ModelAttribute Trainer trainer){
         trainerService.save(trainer);
-        return "trainerList";
+        return "redirect:/admin/trainer/list";
     }
 
 

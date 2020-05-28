@@ -11,7 +11,7 @@ import pl.coderslab.bk.service.StudentService;
 
 @Controller
 //@Secured("Role_Admin")
-@RequestMapping("/student")
+@RequestMapping("/admin/student")
 public class StudentController {
 
     private final StudentService studentService;
@@ -29,7 +29,7 @@ public class StudentController {
     @PostMapping
     public String post (@ModelAttribute Student student){
         studentService.save(student);
-        return "studentList";
+        return "redirect:/admin/student/list";
     }
 
 

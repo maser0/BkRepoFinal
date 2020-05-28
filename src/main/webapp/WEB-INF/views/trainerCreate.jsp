@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<form:form method="post" modelAttribute="trainer" action="/trainer">
+<form:form method="post" modelAttribute="trainer" action="/admin/trainer">
     <form:hidden path="id"/>
     <div>
         <label>

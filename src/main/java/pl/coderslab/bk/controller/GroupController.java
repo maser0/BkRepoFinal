@@ -1,6 +1,7 @@
 package pl.coderslab.bk.controller;
 
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,7 @@ import java.util.List;
 
 @Controller
 //@Secured("Role_Admin")
-@RequestMapping("/group")
+@RequestMapping("/admin/group")
 public class GroupController {
 
     private final GroupService groupService;
@@ -33,7 +34,7 @@ public class GroupController {
     @PostMapping
     public String post (@ModelAttribute Group group){
         groupService.save(group);
-        return "groupList";
+        return "redirect:/admin/group/list";
     }
 
 

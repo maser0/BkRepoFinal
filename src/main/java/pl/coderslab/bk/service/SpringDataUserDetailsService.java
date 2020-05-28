@@ -1,4 +1,4 @@
-package pl.coderslab.examplesecurity.service;
+package pl.coderslab.bk.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -6,13 +6,12 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import pl.coderslab.examplesecurity.Model.CurrentUser;
-import pl.coderslab.examplesecurity.entity.Role;
-import pl.coderslab.examplesecurity.entity.User;
-import pl.coderslab.examplesecurity.interfaces.UserService;
+import pl.coderslab.bk.Model.CurrentUser;
+import pl.coderslab.bk.entity.Role;
+import pl.coderslab.bk.entity.User;
+import pl.coderslab.bk.interfaces.UserService;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class SpringDataUserDetailsService implements UserDetailsService {

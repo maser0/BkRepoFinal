@@ -1,6 +1,6 @@
-package pl.coderslab.examplesecurity.interfaces;
+package pl.coderslab.bk.interfaces;
 
-import pl.coderslab.examplesecurity.entity.User;
+import pl.coderslab.bk.entity.User;
 
 public interface UserService {
     User findByUserName(String name);

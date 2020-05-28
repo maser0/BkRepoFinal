@@ -12,7 +12,7 @@
 </head>
 <body>
 Jesteś pewien, że chesz usunąć grupę: ${group.date} ?
-<a href="/group/delete/${group.id}">Delete</a>
-<a href="/group/groupList">Cancel</a>
+<a href="/admin/group/delete/${group.id}">Delete</a>
+<a href="/admin/group/groupList">Cancel</a>
 </body>
 </html>

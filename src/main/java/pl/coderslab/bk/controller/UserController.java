@@ -1,21 +1,11 @@
-package pl.coderslab.examplesecurity.controller;
+package pl.coderslab.bk.controller;
 
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
-import pl.coderslab.examplesecurity.entity.Role;
-import pl.coderslab.examplesecurity.entity.User;
-import pl.coderslab.examplesecurity.fixture.InitDataFixture;
-import pl.coderslab.examplesecurity.interfaces.RoleService;
-import pl.coderslab.examplesecurity.interfaces.UserService;
-
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import pl.coderslab.bk.fixture.InitDataFixture;
 
 @Controller
 public class UserController {
@@ -45,7 +35,7 @@ public class UserController {
 
         this.initDataFixture.initRoles();
         this.initDataFixture.initUsers();
-        return "initialized";
+        return "done";
     }
 
 

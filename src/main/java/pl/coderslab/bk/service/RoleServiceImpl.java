@@ -1,10 +1,10 @@
-package pl.coderslab.examplesecurity.service;
+package pl.coderslab.bk.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.coderslab.examplesecurity.entity.Role;
-import pl.coderslab.examplesecurity.interfaces.RoleService;
-import pl.coderslab.examplesecurity.repository.RoleRepository;
+import pl.coderslab.bk.entity.Role;
+import pl.coderslab.bk.interfaces.RoleService;
+import pl.coderslab.bk.repository.RoleRepository;
 
 @Service
 public class RoleServiceImpl implements RoleService {

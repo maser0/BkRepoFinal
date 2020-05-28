@@ -22,10 +22,10 @@
             <td>${trainer.name}</td>
             <td>${trainer.surname}</td>
             <td>
-                <a href="/trainer/${trainer.id}">Edytuj</a>
+                <a href="/admin/trainer/${trainer.id}">Edytuj</a>
             </td>
             <td>
-                <a href="/trainer/confirmDelete/${trainer.id}">Usuń</a>
+                <a href="/admin/trainer/confirmDelete/${trainer.id}">Usuń</a>
             </td>
         </tr>
     </c:forEach>
