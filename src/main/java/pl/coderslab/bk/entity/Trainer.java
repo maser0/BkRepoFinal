@@ -1,6 +1,8 @@
 package pl.coderslab.bk.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -9,7 +11,9 @@ public class Trainer {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "pole nie może być puste")
     private String name;
+    @NotBlank (message = "pole nie może być puste")
     private String surname;
     @OneToMany
     private List<Group> groups;

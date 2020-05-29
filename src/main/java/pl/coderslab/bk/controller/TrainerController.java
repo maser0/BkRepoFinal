@@ -3,9 +3,12 @@ package pl.coderslab.bk.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.bk.entity.Trainer;
 import pl.coderslab.bk.service.TrainerService;
+
+import javax.validation.Valid;
 
 @Controller
 //@Secured("Role_Admin")
@@ -27,7 +30,10 @@ public class TrainerController {
     }
 
     @PostMapping
-    public String post (@ModelAttribute Trainer trainer){
+    public String post (@Valid @ModelAttribute Trainer trainer, BindingResult bindingResult){
+        if (bindingResult.hasErrors()) {
+            return "trainerCreate";
+        }
         trainerService.save(trainer);
         return "redirect:/admin/trainer/list";
     }
@@ -41,11 +47,11 @@ public class TrainerController {
 
 
     @GetMapping("/delete/{id}")
-    @ResponseBody
+
     public String delete(@PathVariable long id) {
         Trainer trainerToDelete = trainerService.read(id);
         trainerService.delete(trainerToDelete);
-        return "Deleted";
+        return "redirect:/admin/trainer/list";
     }
 
     @GetMapping("/confirmDelete/{id}")

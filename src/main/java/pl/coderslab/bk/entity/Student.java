@@ -1,6 +1,14 @@
 package pl.coderslab.bk.entity;
 
+
+
+import org.springframework.format.annotation.NumberFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +18,12 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank (message = "pole nie może być puste")
     private String name;
+    @NotBlank (message = "pole nie może być puste")
     private String surname;
+    @NotBlank (message = "pole nie może być puste")
+    @Digits(integer = 12, fraction = 0, message = "wprowadź do 12 cyfr")
     private String phoneNumber;
 
     @ManyToMany ( mappedBy = "students")

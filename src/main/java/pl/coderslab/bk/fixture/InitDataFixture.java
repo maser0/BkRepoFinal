@@ -37,6 +37,7 @@ public class InitDataFixture {
         Student student = new Student();
         student.setName("Zbychu");
         student.setSurname("Moro");
+        student.setPhoneNumber("21315231");
         studentService.save(student);
     }
 

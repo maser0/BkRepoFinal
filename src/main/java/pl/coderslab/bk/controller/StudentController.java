@@ -4,10 +4,15 @@ package pl.coderslab.bk.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.bk.entity.Student;
 
 import pl.coderslab.bk.service.StudentService;
+import pl.coderslab.bk.validation.TestValidationGroup;
+
+import javax.validation.Valid;
 
 @Controller
 //@Secured("Role_Admin")
@@ -27,8 +32,15 @@ public class StudentController {
     }
 
     @PostMapping
-    public String post (@ModelAttribute Student student){
-        studentService.save(student);
+    public String post (@Valid @ModelAttribute Student student, BindingResult bindingResult){
+        if (bindingResult.hasErrors()) {
+            return "studentCreate";
+        }
+        try {
+            studentService.save(student);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return "redirect:/admin/student/list";
     }
 
@@ -41,11 +53,11 @@ public class StudentController {
 
 
     @GetMapping("/delete/{id}")
-    @ResponseBody
+
     public String delete(@PathVariable long id) {
         Student studentToDelete = studentService.read(id);
         studentService.delete(studentToDelete);
-        return "Deleted";
+        return "redirect:/admin/student/list";
     }
 
     @GetMapping("/confirmDelete/{id}")
