@@ -1,8 +1,12 @@
 package pl.coderslab.bk.entity;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +17,10 @@ public class Group {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank (message = "pole nie może być puste")
     private String dayOfWeek;
-
+    @NotBlank(message = "pole nie może być puste")
+    @DateTimeFormat
     private String hour;
 
     @OneToMany

@@ -4,12 +4,14 @@ package pl.coderslab.bk.controller;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.bk.entity.Group;
 import pl.coderslab.bk.entity.Student;
 import pl.coderslab.bk.service.GroupService;
 import pl.coderslab.bk.service.StudentService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -32,7 +34,10 @@ public class GroupController {
     }
 
     @PostMapping
-    public String post (@ModelAttribute Group group){
+    public String post (@Valid @ModelAttribute Group group, BindingResult bindingResult){
+        if (bindingResult.hasErrors()) {
+            return "groupCreate";
+        }
         groupService.save(group);
         return "redirect:/admin/group/list";
     }
@@ -46,11 +51,11 @@ public class GroupController {
 
 
     @GetMapping("/delete/{id}")
-    @ResponseBody
+//    @ResponseBody
     public String delete(@PathVariable long id) {
         Group groupToDelete = groupService.read(id);
         groupService.delete(groupToDelete);
-        return "Deleted";
+        return "redirect:/admin/group/list";
     }
 
     @GetMapping("/confirmDelete/{id}")
