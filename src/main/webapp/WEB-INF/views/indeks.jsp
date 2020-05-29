@@ -52,7 +52,7 @@
             <a href="/admin/group">Stwórz grupe</a>
         </td>
         <td>
-            <a href="/admin/group/list">Wszystkie grupy</a>
+            <a href="/group/list">Wszystkie grupy</a>
         </td>
     </tr>
 

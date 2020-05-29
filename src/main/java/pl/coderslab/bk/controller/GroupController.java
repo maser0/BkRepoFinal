@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 //@Secured("Role_Admin")
-@RequestMapping("/admin/group")
+//@RequestMapping("/admin/group")
 public class GroupController {
 
     private final GroupService groupService;
@@ -27,45 +27,45 @@ public class GroupController {
         this.studentService = studentService;
     }
 
-    @GetMapping
+    @GetMapping ("/admin/group")
     public String get(Model model) {
         model.addAttribute("group", new Group());
         return "groupCreate";
     }
 
-    @PostMapping
+    @PostMapping ("/admin/group")
     public String post (@Valid @ModelAttribute Group group, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             return "groupCreate";
         }
         groupService.save(group);
-        return "redirect:/admin/group/list";
+        return "redirect:/group/list";
     }
 
 
-    @GetMapping("/list")
+    @GetMapping("/group/list")
     public String getList(Model model) {
         model.addAttribute("groups", groupService.findAll());
         return "groupList";
     }
 
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/admin/group/delete/{id}")
 //    @ResponseBody
     public String delete(@PathVariable long id) {
         Group groupToDelete = groupService.read(id);
         groupService.delete(groupToDelete);
-        return "redirect:/admin/group/list";
+        return "redirect:/group/list";
     }
 
-    @GetMapping("/confirmDelete/{id}")
+    @GetMapping("/admin/group/confirmDelete/{id}")
     public String confirmDelete(@PathVariable long id, Model model) {
         Group group = groupService.read(id);
         model.addAttribute("group", group);
         return "confirmDeleteGroup";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/admin/group/{id}")
     public String edit(@PathVariable long id,Model model){
         Group group = groupService.read(id);
         model.addAttribute("group", group);
