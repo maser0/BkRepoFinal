@@ -12,5 +12,8 @@
 </head>
 <body>
 <h1>You have not authorized</h1>
+<div>
+    <a href="/">Strona główna</a>
+</div>
 </body>
 </html>

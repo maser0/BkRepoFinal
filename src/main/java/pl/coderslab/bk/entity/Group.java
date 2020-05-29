@@ -24,7 +24,7 @@ public class Group {
     private String hour;
 
     @OneToMany
-    private List<Presence> presence = new ArrayList<>();
+    private List <Classes> classesList = new ArrayList<>();
 
     @ManyToMany
     @JoinTable(name = "group_students")
@@ -55,13 +55,7 @@ public class Group {
         this.hour = hour;
     }
 
-    public List<Presence> getPresence() {
-        return presence;
-    }
 
-    public void setPresence(List<Presence> presence) {
-        this.presence = presence;
-    }
 
     public List<Student> getStudents() {
         return students;

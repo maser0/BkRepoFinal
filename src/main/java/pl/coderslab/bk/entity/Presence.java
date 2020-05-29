@@ -8,14 +8,24 @@ public class Presence {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDateTime date;
     private boolean absence;
 
+
+
     @ManyToOne
-    private Group group;
+    private Classes classes;
 
     @ManyToOne
     private Student student;
+
+
+    public Classes getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Classes classes) {
+        this.classes = classes;
+    }
 
     public Long getId() {
         return id;
@@ -25,13 +35,6 @@ public class Presence {
         this.id = id;
     }
 
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
 
     public boolean isAbsence() {
         return absence;
@@ -41,13 +44,6 @@ public class Presence {
         this.absence = absence;
     }
 
-    public Group getGroup() {
-        return group;
-    }
-
-    public void setGroup(Group group) {
-        this.group = group;
-    }
 
     public Student getStudent() {
         return student;

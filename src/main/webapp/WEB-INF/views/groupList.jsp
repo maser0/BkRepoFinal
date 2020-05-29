@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Lista Groupów</title>
+    <title>Lista Grup</title>
 </head>
 <body>
 <table>
@@ -21,7 +21,7 @@
             <td>${group.dayOfWeek}</td>
             <td>${group.hour}</td>
             <td>
-                <a href="/presence/${group.id}">Sprawdź obecność</a>
+                <a href="/classes/${group.id}">Sprawdź obecność</a>
             </td>
             <td>
                 <a href="/admin/group/${group.id}">Edytuj</a>
@@ -36,4 +36,12 @@
 <div>
     <a href="/">Strona główna</a>
 </div>
+<br>
+<br>
+<footer>
+    <form action="<c:url value="/logout"/>" method="post">
+        <input class="fa fa-id-badge" type="submit" value="Wyloguj">
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    </form>
+</footer>
 </html>
