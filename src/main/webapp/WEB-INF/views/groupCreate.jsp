@@ -37,6 +37,15 @@
     </form:select>
     </label>
 </div>
+    <br>
+    <div>
+        <label>
+            Trenerzy
+            <form:select  items="${trainers}" itemValue="id" itemLabel="fullName" path="trainers" multiple="true">
+
+            </form:select>
+        </label>
+    </div>
 
 
 

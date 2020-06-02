@@ -30,6 +30,26 @@ public class Group {
     @JoinTable(name = "group_students")
     private List<Student> students = new ArrayList<>();
 
+    @ManyToMany
+    private List <Trainer> trainers = new ArrayList<>();
+
+    public List<Trainer> getTrainers() {
+        return trainers;
+    }
+
+    public void setTrainers(List<Trainer> trainers) {
+        this.trainers = trainers;
+    }
+
+    public List<Classes> getClassesList() {
+        return classesList;
+    }
+
+    public void setClassesList(List<Classes> classesList) {
+        this.classesList = classesList;
+    }
+
+
 
     public Long getId() {
         return id;

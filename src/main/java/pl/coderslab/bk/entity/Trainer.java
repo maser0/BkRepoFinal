@@ -15,11 +15,15 @@ public class Trainer {
     private String name;
     @NotBlank (message = "pole nie może być puste")
     private String surname;
-    @OneToMany
+    @ManyToMany
     private List<Group> groups;
 
 
     public Trainer() {
+    }
+
+    public String getFullName(){
+        return name+" "+surname;
     }
 
     public Long getId() {

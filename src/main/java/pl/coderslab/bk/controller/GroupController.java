@@ -1,15 +1,16 @@
 package pl.coderslab.bk.controller;
 
 
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.bk.entity.Group;
 import pl.coderslab.bk.entity.Student;
+import pl.coderslab.bk.entity.Trainer;
 import pl.coderslab.bk.service.GroupService;
 import pl.coderslab.bk.service.StudentService;
+import pl.coderslab.bk.service.TrainerService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -21,10 +22,12 @@ public class GroupController {
 
     private final GroupService groupService;
     private final StudentService studentService;
+    private final TrainerService trainerService;
 
-    public GroupController(GroupService groupService, StudentService studentService) {
+    public GroupController(GroupService groupService, StudentService studentService, TrainerService trainerService) {
         this.groupService = groupService;
         this.studentService = studentService;
+        this.trainerService = trainerService;
     }
 
     @GetMapping ("/admin/group")
@@ -75,5 +78,10 @@ public class GroupController {
     @ModelAttribute("students")
     public List<Student> students(){
         return studentService.findAll();
+    }
+
+    @ModelAttribute("trainers")
+    public List<Trainer> trainers(){
+        return trainerService.findAll();
     }
 }
