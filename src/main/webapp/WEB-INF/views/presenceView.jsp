@@ -14,8 +14,8 @@
 </head>
 <body>
 <form:form method="post" modelAttribute="classes">
-<%--    <form:hidden path="id"/>--%>
-<%--<form method="post" >--%>
+<%--        <form:hidden path="id"/>--%>
+    <%--<form method="post" >--%>
 
 
     <table>
@@ -30,16 +30,17 @@
             <td>${classes.time}</td>
             <td>${classes.group.dayOfWeek}</td>
             <c:forEach items="${trainers}" var="trainer">
-            <td>${trainer.fullName}</td>
+                <td>${trainer.fullName}</td>
             </c:forEach>
-            <c:forEach   items="${classes.presences}" var="presence">
-<%--                <c:forEach items="${students}" var="student">--%>
+            <c:forEach items="${classes.presences}" var="presence">
+
                 <td>${presence.student.fullName}</td>
                 <td>
                     <input type="hidden" value="${presence.id}" name="id"/>
                     <input type="checkbox" value="${presence.absence}" name="absence"/>
+<%--                    <form:input type="checkbox" path="absence"/>--%>
                 </td>
-<%--                </c:forEach>--%>
+
             </c:forEach>
 
 

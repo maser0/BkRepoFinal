@@ -8,6 +8,9 @@ import pl.coderslab.bk.service.ClassesService;
 import pl.coderslab.bk.service.GroupService;
 import pl.coderslab.bk.service.PresenceService;
 
+import javax.management.loading.MLetContent;
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,21 +72,26 @@ public class ClassesController {
 //        model.addAttribute("students",students);
         model.addAttribute("trainers", trainers);
 
-
-
-
-
-
-
-
         return "presenceView";
     }
 
     @PostMapping("presence/{classId}")
     @ResponseBody
-    public String presUpdate( @PathVariable long classId, @ModelAttribute List<Presence> presenceList  ) {
+    public String presUpdate(HttpServletRequest request, @PathVariable long classId, @ModelAttribute List<Presence> presenceList  ) {
        Classes classes = classesService.read(classId);
-
+        List<Boolean> booleans = new ArrayList<>();
+        String[] params = request.getParameterValues("absence");
+        for (String param : params) {
+            booleans.add(Boolean.parseBoolean(param));
+        }
+//        List<Student> students = classes.getGroup().getStudents();
+//        for (Student student : students) {
+//            presence.setStudent(student);
+//            presence.setClasses(classes);
+//            presence.setAbsence(false);
+//            presenceService.save(presence);
+//            presences.add(presence);
+//        }
 
 
         return "data";
