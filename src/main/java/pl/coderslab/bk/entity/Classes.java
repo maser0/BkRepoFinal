@@ -16,7 +16,7 @@ public class Classes {
     @ManyToOne
     private Group group;
     @OneToMany
-    private List<Presence> presences = new ArrayList<>();  // czy to powinno byc wywołane na studencie ? I tu tylko studnetow/
+    private List<Presence> presences = new ArrayList<>();
 
 
     public Long getId() {
