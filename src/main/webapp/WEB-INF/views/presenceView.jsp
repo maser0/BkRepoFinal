@@ -13,25 +13,33 @@
     <title>Obecność grupy</title>
 </head>
 <body>
-<form method="post" >
+<form:form method="post" modelAttribute="classes">
+<%--    <form:hidden path="id"/>--%>
+<%--<form method="post" >--%>
 
 
     <table>
         <tr>
             <th>Data zajęć</th>
             <th> Nazwa grupy</th>
+            <th> Trenerzy</th>
             <th> Obecności</th>
         </tr>
 
         <tr>
             <td>${classes.time}</td>
-            <td>${classes.group}</td>
-            <c:forEach items="${classes.presences}" var="presence">
+            <td>${classes.group.dayOfWeek}</td>
+            <c:forEach items="${trainers}" var="trainer">
+            <td>${trainer.fullName}</td>
+            </c:forEach>
+            <c:forEach   items="${classes.presences}" var="presence">
+<%--                <c:forEach items="${students}" var="student">--%>
                 <td>${presence.student.fullName}</td>
                 <td>
                     <input type="hidden" value="${presence.id}" name="id"/>
                     <input type="checkbox" value="${presence.absence}" name="absence"/>
                 </td>
+<%--                </c:forEach>--%>
             </c:forEach>
 
 
@@ -40,7 +48,7 @@
     </table>
     <input type="submit">
 
-</form>
+</form:form>
 </body>
 <div>
     <a href="/">Strona główna</a>

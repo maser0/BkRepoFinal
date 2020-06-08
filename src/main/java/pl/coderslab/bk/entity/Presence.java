@@ -10,12 +10,10 @@ public class Presence {
     private Long id;
     private boolean absence;
 
-
-
     @ManyToOne
     private Classes classes;
 
-    @ManyToOne
+    @ManyToOne  // tu chyba one to many?!!!!w ogole many to many!!! chyba tak > Sprawdz many to many
     private Student student;
 
 
@@ -52,4 +50,6 @@ public class Presence {
     public void setStudent(Student student) {
         this.student = student;
     }
+
+
 }

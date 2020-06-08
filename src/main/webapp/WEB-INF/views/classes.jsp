@@ -13,7 +13,8 @@
     <title>Obecność</title>
 </head>
 <body>
-<form:form method="post" modelAttribute="classes">
+<form:form method="post" modelAttribute="classes" >
+    <form:hidden path="id"/>
 
 
     <table>

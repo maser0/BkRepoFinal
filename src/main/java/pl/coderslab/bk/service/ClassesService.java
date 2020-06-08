@@ -24,15 +24,15 @@ public class ClassesService {
         classesRepository.save(classes);
 
         //Generate prencence for each student
-        List<Student> students = classes.getGroup().getStudents();
-        students.forEach( student -> {
-            Presence presence = new Presence();
-            presence.setStudent(student);
-            presence.setClasses(classes);
-            presence.setAbsence(false);
-            presenceRepository.save(presence);
+//        List<Student> students = classes.getGroup().getStudents();
+//        students.forEach( student -> {
+//            Presence presence = new Presence();
+//            presence.setStudent(student);
+//            presence.setClasses(classes);
+//            presence.setAbsence(false);
+//            presenceRepository.save(presence);
             //save presence
-        });
+//        });
     }
 
     public void delete (Classes classes){
