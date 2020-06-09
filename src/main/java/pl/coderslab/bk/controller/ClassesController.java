@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping ("/classes")
+@RequestMapping("/classes")
 public class ClassesController {
     private final GroupService groupService;
     private final ClassesService classesService;
@@ -29,31 +29,29 @@ public class ClassesController {
     }
 
     @GetMapping("/{id}")  // tutaj to jest group ID
-    public String get(@PathVariable long id, Model model){
-        Group group = groupService.read(id) ;
+    public String get(@PathVariable long id, Model model) {
+        Group group = groupService.read(id);
         model.addAttribute("group", group);
         model.addAttribute("classes", new Classes());
 
         return "classes";
     }
 
-    @PostMapping ("/{id}")
-    public String post(@PathVariable long id, @ModelAttribute Classes classes){
+    @PostMapping("/{id}")
+    public String post(@PathVariable long id, @ModelAttribute Classes classes) {
         Group group = groupService.read(id);
         classes.setGroup(group);
         classesService.save(classes);
 
 
-        return "redirect:/classes/presence/" +classes.getId();
+        return "redirect:/classes/presence/" + classes.getId();
     }
 
     @GetMapping("/presence/{classId}")
-    public String pres(@PathVariable long classId, Model model){
+    public String pres(@PathVariable long classId, Model model) {
         Classes classes = classesService.read(classId);
-//        Presence presence = new Presence();
+
         Group group = classes.getGroup();
-//        List<Student> students = group.getStudents();
-//        students.forEach(presence::setStudent);
         List<Presence> presences = new ArrayList<>();
         List<Student> students = classes.getGroup().getStudents();
         for (Student student : students) {
@@ -64,12 +62,10 @@ public class ClassesController {
             presenceService.save(presence);
             presences.add(presence);
         }
-//
-//        presences.add(presence);
+
         classes.setPresences(presences);
         List<Trainer> trainers = group.getTrainers();
-        model.addAttribute("classes",classes);
-//        model.addAttribute("students",students);
+        model.addAttribute("classes", classes);
         model.addAttribute("trainers", trainers);
 
         return "presenceView";
@@ -77,30 +73,20 @@ public class ClassesController {
 
     @PostMapping("presence/{classId}")
     @ResponseBody
-    public String presUpdate(HttpServletRequest request, @PathVariable long classId, @ModelAttribute List<Presence> presenceList  ) {
-       Classes classes = classesService.read(classId);
-        List<Boolean> booleans = new ArrayList<>();
-        String[] params = request.getParameterValues("absence");
-        for (String param : params) {
-            booleans.add(Boolean.parseBoolean(param));
-        }
-//        List<Student> students = classes.getGroup().getStudents();
-//        for (Student student : students) {
-//            presence.setStudent(student);
-//            presence.setClasses(classes);
-//            presence.setAbsence(false);
-//            presenceService.save(presence);
-//            presences.add(presence);
+    public String presUpdate(@PathVariable long classId, @ModelAttribute List<Presence> presenceList) {
+        Classes classes = classesService.read(classId);
+        presenceList.forEach(presence -> presenceService.save(presence));
+        classes.setPresences(presenceList);
+
+//        List<Boolean> booleans = new ArrayList<>();
+//        String[] params = request.getParameterValues("absence");
+//        for (String param : params) {
+//            booleans.add(Boolean.parseBoolean(param));
 //        }
 
 
         return "data";
     }
-
-
-
-
-
 
 
     @GetMapping("/list")

@@ -13,7 +13,9 @@
     <title>Obecność grupy</title>
 </head>
 <body>
-<form:form method="post" modelAttribute="classes">
+
+<%--@elvariable id="presence" type=""--%>
+<form:form method="post" modelAttribute="presence">
 <%--        <form:hidden path="id"/>--%>
     <%--<form method="post" >--%>
 
