@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Witek
@@ -10,6 +11,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
 
@@ -17,13 +19,13 @@
     <form:hidden path="id"/>
     <div>
         <label>
-            Nazwa użytkownika <form:input path="username"/>
+            Nazwa użytkownika <form:input path="username" placeholder="Nazwa Użytkownika"/>
             <form:errors path="username"/>
         </label>
     </div>
     <div>
         <label>
-            Hasło <form:input path="password"/>
+            Hasło <form:input path="password" placeholder="Hasło" type="password"/>
             <form:errors path="password"/>
         </label>
     </div>

@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>Obecność grupy</title>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
 
@@ -39,8 +40,9 @@
                 <td>${presence.student.fullName}</td>
                 <td>
                     <input type="hidden" value="${presence.id}" name="id"/>
+<%--                    <form:hidden path="id"/>--%>
                     <input type="checkbox" value="${presence.absence}" name="absence"/>
-<%--                    <form:input type="checkbox" path="absence"/>--%>
+<%--                    <form:checkbox path="absence"/>--%>
                 </td>
 
             </c:forEach>

@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Lista Studentów</title>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
 <table>

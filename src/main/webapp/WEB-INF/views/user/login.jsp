@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Witek
@@ -9,13 +10,17 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
 
 <form method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
+    <div>
+        <label> User Name : <input type="text" name="username"/> </label>
+    </div>
+
     <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Sign In"/></div>
+    <div><input type="submit" value="Zaloguj"/></div>
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 </form>
 

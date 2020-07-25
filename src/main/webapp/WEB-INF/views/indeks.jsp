@@ -1,4 +1,5 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Witek
@@ -10,9 +11,14 @@
 <html>
 <head>
     <title>Strona główna</title>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
 <h1><spring:message code="app.title"/></h1>
+
+
+
+
 <table>
     <tr>
         <th>Trener </th>
@@ -67,19 +73,21 @@
 <br>
 
 
-<div>
+<div class="buttons">
     <span>
         <a href="/login">Zaloguj</a>
     </span>
-</div>
-<br>
-<div>
+    <br>
+    <br>
     <span>
-        <a href="/about">wyloguj</a>
+        <a href="/about">Wyloguj</a>
     </span>
 </div>
 <br>
-<footer><spring:message code="app.footer"/></footer>
+<footer><spring:message code="app.footer"/>
+
+</footer>
+<div><img src="<c:url value="/resources/images/logo.jpg" />" class="images"/> </div>
 </body>
 
 </html>

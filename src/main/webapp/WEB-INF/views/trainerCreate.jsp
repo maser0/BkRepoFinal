@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>Stwórz Trenera</title>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
 

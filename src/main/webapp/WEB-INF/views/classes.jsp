@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>Obecność</title>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
 <form:form method="post" modelAttribute="classes" >

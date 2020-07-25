@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Potwierdź usunięcie</title>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
 Jesteś pewien, że chesz usunąć grupę: ${group.dayOfWeek} ${group.hour} ?

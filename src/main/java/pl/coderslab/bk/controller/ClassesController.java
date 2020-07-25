@@ -73,10 +73,16 @@ public class ClassesController {
 
     @PostMapping("presence/{classId}")
     @ResponseBody
-    public String presUpdate(@PathVariable long classId, @ModelAttribute List<Presence> presenceList) {
+    public String presUpdate(@PathVariable long classId, @ModelAttribute List <Presence> presenceList) {
         Classes classes = classesService.read(classId);
-        presenceList.forEach(presence -> presenceService.save(presence));
-        classes.setPresences(presenceList);
+//        presenceList.forEach(presence -> presenceService.read(presence.getId()).setAbsence(presence.isAbsence()));
+//        classes.setPresences(presenceList);
+//      presenceService.saveList(presenceList);
+//      classes.setPresences(presenceList);
+//        presenceService.save(presence);
+//        List<Presence> presenceList = new ArrayList<>();
+//        presenceList.add(presence);
+//        classes.setPresences(presenceList);
 
 //        List<Boolean> booleans = new ArrayList<>();
 //        String[] params = request.getParameterValues("absence");

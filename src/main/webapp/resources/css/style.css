@@ -1,0 +1,17 @@
+
+h1{
+  color: darkblue;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+.images {
+  width: 200px;
+  height: 100px;
+}
+
+.buttons {
+  font-weight: bold;
+}

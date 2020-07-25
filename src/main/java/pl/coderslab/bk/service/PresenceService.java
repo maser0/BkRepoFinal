@@ -19,6 +19,12 @@ public class PresenceService {
         presenceRepository.save(presence);
     }
 
+    public void saveList (List <Presence> presenceList){
+
+        presenceList.forEach(presence -> presenceRepository.save(presence));
+    }
+
+
     public void delete (Presence presence){
         presenceRepository.delete(presence);
     }

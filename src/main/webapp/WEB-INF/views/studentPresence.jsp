@@ -1,39 +1,30 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Witek
-  Date: 2020-05-27
-  Time: 08:11
+  Date: 2020-06-09
+  Time: 15:32
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Lista Grup</title>
+    <title>Obecności Studenta</title>
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
-<body>
 <table>
     <tr>
-        <th>Data zajęć </th>
-          </tr>
-    <c:forEach items="${groups}" var="group">
+        <th>Imię </th>
+        <th> Nazwisko </th>
+        <th> Numer kontaktowy </th>
+    </tr>
+    <c:forEach items="${presenceList}" var="presence">
         <tr>
-            <td>${group.dayOfWeek}</td>
-            <td>${group.hour}</td>
-            <td>
-                <a href="/classes/${group.id}">Sprawdź obecność</a>
-            </td>
-            <td>
-                <a href="/admin/group/${group.id}">Edytuj</a>
-            </td>
-            <td>
-                <a href="/admin/group/confirmDelete/${group.id}">Usuń</a>
-            </td>
+            <td>${presence.absence}</td>
+
         </tr>
     </c:forEach>
 </table>
-</body>
 <div>
     <a href="/">Strona główna</a>
 </div>
@@ -45,4 +36,5 @@
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </form>
 </footer>
+</body>
 </html>

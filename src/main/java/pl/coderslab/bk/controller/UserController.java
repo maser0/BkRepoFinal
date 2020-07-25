@@ -48,16 +48,15 @@ public class UserController {
     }
 
     @GetMapping("/createUser")
-    public String cuser(Model model){
+    public String user(Model model){
         model.addAttribute("user", new User());
         return "createUser";
     }
 
     @PostMapping("/createUser")
-    @ResponseBody
     public String post(@ModelAttribute User user){
         userService.saveUser(user);
-        return "created";
+        return "indeks";
     }
 
 
