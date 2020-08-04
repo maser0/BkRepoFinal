@@ -10,10 +10,11 @@ public class Presence {
     private Long id;
     private boolean absence;
 
+
     @ManyToOne
     private Classes classes;
 
-    @ManyToOne  // tu chyba one to many?!!!!w ogole many to many!!! chyba tak > Sprawdz many to many
+    @ManyToOne
     private Student student;
 
 

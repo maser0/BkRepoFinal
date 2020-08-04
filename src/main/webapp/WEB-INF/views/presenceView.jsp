@@ -16,7 +16,7 @@
 <body>
 
 <%--@elvariable id="presence" type=""--%>
-<form:form method="post" modelAttribute="presence">
+<form:form method="post" modelAttribute="classes">
 <%--        <form:hidden path="id"/>--%>
     <%--<form method="post" >--%>
 

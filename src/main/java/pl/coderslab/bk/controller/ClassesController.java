@@ -71,10 +71,16 @@ public class ClassesController {
         return "presenceView";
     }
 
-    @PostMapping("presence/{classId}")
+    @PostMapping("/presence/{classId}")
     @ResponseBody
     public String presUpdate(@PathVariable long classId, @ModelAttribute List <Presence> presenceList) {
         Classes classes = classesService.read(classId);
+        classes.setPresences(presenceList);
+        List <Presence> presences = presenceList;
+        for ( Presence presence: presences) {
+            System.out.println(presence.getStudent().getFullName());
+        }
+        
 //        presenceList.forEach(presence -> presenceService.read(presence.getId()).setAbsence(presence.isAbsence()));
 //        classes.setPresences(presenceList);
 //      presenceService.saveList(presenceList);
